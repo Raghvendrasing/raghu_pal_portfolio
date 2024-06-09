@@ -24,17 +24,26 @@ document.addEventListener("DOMContentLoaded", function() {
     typeRole();
 });
 
-(function() {
-    emailjs.init("cioyVNsvzJVFTwCnyqnnL");
-})();
+// (function() {
+//     emailjs.init("cioyVNsvzJVFTwCnyqnnL");
+// })();
 
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
+// document.getElementById('contact-form').addEventListener('submit', function(event) {
+//     event.preventDefault();
 
-    emailjs.sendForm('service_gswn9qt', 'template_42k874f', this)
-        .then(function() {
-            alert('Your message has been sent!');
-        }, function(error) {
-            alert('Failed to send the message, please try again later.');
-        });
-});
+//     emailjs.sendForm('service_gswn9qt', 'template_42k874f', this)
+//         .then(function() {
+//             alert('Your message has been sent!');
+//         }, function(error) {
+//             alert('Failed to send the message, please try again later.');
+//         });
+// });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const menuIcon = document.querySelector('.menu-icon');
+    const menu = document.querySelector('.menu');  
+    menuIcon.addEventListener('click', function() {
+      menu.classList.toggle('active');
+    });
+  });
+  
