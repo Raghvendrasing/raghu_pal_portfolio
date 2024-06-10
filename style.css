@@ -7,6 +7,7 @@ a {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
 /* Global styles */
@@ -46,6 +47,7 @@ body {
 .logo-container {
   display: flex;
   align-items: center;
+  margin-left: 12px;
 }
 
 .logo {
@@ -252,6 +254,18 @@ body {
 }
 
 @media (max-width: 768px) {
+  body{
+    width: 168% !important;
+  }
+
+  .hero{
+    width: 100% !important;
+  }
+
+  .social-links{
+    margin-left: 7rem;
+    margin-top: 3rem !important;
+  }
   .hero-content h1 {
     font-size: 2rem; 
   }
@@ -275,12 +289,24 @@ body {
   }
 
   .hero-image{
-    margin-top: 10px !important;
-    align-content: center !important;
+    margin-left: 6rem;
+    margin-top: 4rem !important;
   }
 }
 
 @media (max-width: 576px) {
+   body{
+    width: 168% !important;
+  }
+  .hero{
+    width: 100% !important;
+  }
+
+  .social-links{
+    margin-left: 7rem;
+    margin-top: 3rem !important;
+  }
+
   .hero-content h1 {
     font-size: 1.8rem; 
   }
@@ -297,9 +323,9 @@ body {
     font-size: 1.2rem; 
   }
 
-  .hero-image img {
+  /* .hero-image img {
     max-width: 60%; 
-  }
+  } */
 
   .hero {
     display: block !important;
@@ -308,8 +334,8 @@ body {
   }
 
   .hero-image{
-    margin-top: 10px !important;
-    align-content: center !important;
+    margin-left: 6rem;
+    margin-top: 4rem !important;
   }
 }
 
@@ -365,12 +391,16 @@ body {
 }
 
 @media (max-width: 768px) {
+  .skill{
+    margin-left: 70px;
+  }
   .skills h2 {
     font-size: 2.5rem;
   }
 
   .skills-container {
     gap: 1.5rem;
+    justify-content: start;
   }
 
   .skill {
@@ -388,7 +418,6 @@ body {
 }
 /* skills-page-css end */
 
-/* Experience Section */
 /* Experience Section */
 .experience {
   padding: 50px 0;
@@ -517,6 +546,10 @@ body {
     padding-right: 20px;
   }
 
+  .experience-content{
+    margin-left: 25px;
+  }
+
   .experience-right {
     left: 0;
   }
@@ -527,7 +560,7 @@ body {
 
   .experience-container::after,
   .experience-right::after {
-    left: 10px;
+    left: 8px;
   }
 }
 
