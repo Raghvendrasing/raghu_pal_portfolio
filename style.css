@@ -1,4 +1,3 @@
-/* Reset some default styles */
 body,
 h1,
 h2,
@@ -7,60 +6,50 @@ a {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 
 /* Global styles */
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
-  background-color: #f7f7f7;
 }
 
-/* Divider Styles */
-.divider {
-  border: 0;
-  border-top: 2px solid #ddd;
-  margin: 2rem auto;
-  width: 80%;
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1; /* Ensure particles are behind content */
 }
 
-/* header-css start */
+/* Header CSS Start */
 .header {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-  background-color: #ffffff;
+  background-color: #2c3e50; /* Dark blue */
+  color: #ecf0f1; /* Light gray */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   justify-content: space-between;
-  border-bottom: 2px solid burlywood;
-}
-
-.header.scrolled {
-  background-color: #f7f7f7;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  align-items: center;
+  padding: 10px 20px;
 }
 
 .logo-container {
   display: flex;
   align-items: center;
-  margin-left: 12px;
 }
 
 .logo {
   text-decoration: none;
-  color: #333;
+  color: #ecf0f1; /* Light gray */
   font-size: 2rem;
   font-weight: bold;
   transition: color 0.3s ease, font-size 0.3s ease;
-}
-
-.logo i {
-  margin-right: 0.5rem;
-  color: red;
 }
 
 .navbar {
@@ -71,6 +60,7 @@ body {
 .menu-icon {
   display: none;
   cursor: pointer;
+  color: #ecf0f1; /* Light gray */
 }
 
 .menu {
@@ -86,7 +76,7 @@ body {
 
 .menu a {
   text-decoration: none;
-  color: #333;
+  color: #ecf0f1; /* Light gray */
   font-size: 1.5rem;
   padding-bottom: 5px;
   transition: color 0.3s ease, border-bottom 0.3s ease, font-size 0.3s ease;
@@ -94,10 +84,12 @@ body {
 
 .menu a:hover,
 .menu a.active {
-  color: #000;
-  font-size: 1.8rem;
-  font-weight: 800;
-  border-bottom: 3px solid #ffae00;
+  color: #3498db; /* Blue */
+  border-bottom: 3px solid #3498db; /* Blue */
+}
+
+.menu-icon i {
+  font-size: 1.5rem;
 }
 
 @media (max-width: 768px) {
@@ -108,14 +100,15 @@ body {
     top: 70px;
     left: 0;
     width: 100%;
-    background-color: #ffffff;
+    background-color: #2c3e50;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
 
   .menu.active {
     display: flex;
     width: 140%;
-    margin-top: -14px;  
+    margin-top: -17px;  
+    padding: 7px;
   }
 
   .navbar a{
@@ -134,27 +127,31 @@ body {
     margin: 1rem 0;
   }
 }
-/* header-css end */
+/* Header CSS End */
 
-/* welcome-page-css start */
+
+/* home css start */
 .hero {
   height: 100vh;
+  position: relative;
+  overflow: hidden;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 2rem;
-  background-color: #f7f7f7;
+  /* background-color: #f9f9f9; */
+  z-index: 10;
 }
 
 .hero-content {
-  /* max-width: 50%; */
   animation: fadeIn 2s ease-in-out;
 }
 
 .hero-content h1 {
-  font-size: 5rem;
+  font-size: 4rem;
   margin-bottom: 1rem;
   line-height: 1.2;
+  color: #333;
 }
 
 .hero-content p {
@@ -162,6 +159,7 @@ body {
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
+  color: #666;
 }
 
 .intro {
@@ -169,20 +167,21 @@ body {
   margin-bottom: 2rem;
   display: flex;
   align-items: center;
+  color: #666;
 }
 
 .highlight-hey {
-  color: #ff6347;
+  color: #e74c3c;
   font-weight: bold;
 }
 
 .highlight-name {
-  color: #f39c12;
+  color: #3498db;
   font-weight: bold;
 }
 
 .highlight-role {
-  color: #e74c3c;
+  color: #9b59b6;
   font-weight: bold;
   display: inline-block;
   width: max-content;
@@ -191,7 +190,7 @@ body {
 }
 
 .highlight-msg {
-  color: #3498db;
+  color: #2ecc71;
   font-weight: bold;
 }
 
@@ -203,8 +202,7 @@ body {
 }
 
 @keyframes blink {
-  from,
-  to {
+  from, to {
     opacity: 1;
   }
   50% {
@@ -213,7 +211,7 @@ body {
 }
 
 .social-links a {
-  font-size: 3rem;
+  font-size: 2rem;
   margin: 0 0.5rem;
   transition: transform 0.3s, color 0.3s;
 }
@@ -234,8 +232,50 @@ body {
   transform: scale(1.2);
 }
 
+.social-links {
+  display: flex;
+  align-items: center;
+}
+
+.social-links a {
+  font-size: 2rem;
+  margin: 0 0.5rem;
+  transition: transform 0.3s, color 0.3s;
+  position: relative;
+}
+
+.social-links a::before { 
+  /* content: ""; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #f39c12;
+  animation: bounce 1s infinite;
+  opacity: 0;
+}
+
+.social-links a:hover {
+  transform: scale(1.2);
+}
+
+.social-links a:hover::before {
+  opacity: 1; 
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+}
+
 .hero-image img {
-  max-width: 90%;
+  max-width: 80%;
   border-radius: 50%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   animation: fadeIn 2s ease-in-out 0.5s;
@@ -285,7 +325,8 @@ body {
   .hero {
     padding: 50px;
     display: block !important;
-    background-color: #f7f7f7;
+    /* background-color: #f7f7f7; */
+    margin-top: 7rem;
   }
 
   .hero-image{
@@ -322,32 +363,16 @@ body {
   .cursor {
     font-size: 1.2rem; 
   }
-
-  /* .hero-image img {
-    max-width: 60%; 
-  } */
-
-  .hero {
-    display: block !important;
-    padding: 50px;
-    background-color: #f7f7f7;
-  }
-
-  .hero-image{
-    margin-left: 6rem;
-    margin-top: 4rem !important;
-  }
 }
+/* home css end */
 
-
-
-/* welcome-page-css end */
 
 /* skills-page-css start */
 .skills {
-  background-color: #f7f7f7;
+  /* background-color: #f7f7f7; */
   padding: 4rem 2rem;
   text-align: center;
+  z-index: 10;
 }
 
 .skills h2 {
@@ -421,7 +446,8 @@ body {
 /* Experience Section */
 .experience {
   padding: 50px 0;
-  background-color: #f9f9f9;
+  /* background-color: #f9f9f9; */
+  z-index: 10;
 }
 
 .experience-heading {
@@ -569,8 +595,9 @@ body {
 /* Education Section Styles */
 .education {
   padding: 4rem 2rem;
-  background-color: #f9f9f9;
+  /* background-color: #f9f9f9; */
   text-align: center;
+  z-index: 10;
 }
 
 .education .heading {
@@ -721,7 +748,8 @@ body {
 
 /* about section start */
 .about {
-  background-color: #f9f9f9;
+  /* background-color: #f9f9f9; */
+  z-index: 10;
   padding: 80px 0;
 }
 
@@ -866,7 +894,8 @@ body {
 /* Contact Section */
 .contact {
   padding: 80px 0;
-  background-color: #f5f5f5;
+  /* background-color: #f5f5f5; */
+  z-index: 10;
 }
 
 .contact-heading {
