@@ -24,20 +24,63 @@ document.addEventListener("DOMContentLoaded", function() {
     typeRole();
 });
 
-// (function() {
-//     emailjs.init("cioyVNsvzJVFTwCnyqnnL");
-// })();
-
-// document.getElementById('contact-form').addEventListener('submit', function(event) {
-//     event.preventDefault();
-
-//     emailjs.sendForm('service_gswn9qt', 'template_42k874f', this)
-//         .then(function() {
-//             alert('Your message has been sent!');
-//         }, function(error) {
-//             alert('Failed to send the message, please try again later.');
-//         });
-// });
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+  
+    const form = event.target;
+    const formData = new FormData(form);
+  
+    fetch('https://formspree.io/f/mpwaznvo', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        form.reset();
+        Toastify({
+          text: "Thank you for your message!",
+          duration: 3000,
+          close: true,
+          gravity: "top", 
+          position: "right",
+          backgroundColor: "#4CAF50",
+        }).showToast();
+      } else {
+        response.json().then(data => {
+          if (Object.hasOwn(data, 'errors')) {
+            Toastify({
+              text: data['errors'].map(error => error['message']).join(", "),
+              duration: 3000,
+              close: true,
+              gravity: "top",
+              position: "right",
+              backgroundColor: "#FF0000",
+            }).showToast();
+          } else {
+            Toastify({
+              text: "Oops! There was a problem submitting your form",
+              duration: 3000,
+              close: true,
+              gravity: "top",
+              position: "right",
+              backgroundColor: "#FF0000",
+            }).showToast();
+          }
+        })
+      }
+    }).catch(error => {
+      Toastify({
+        text: "Oops! There was a problem submitting your form",
+        duration: 3000,
+        close: true,
+        gravity: "top",
+        position: "right",
+        backgroundColor: "#FF0000",
+      }).showToast();
+    });
+  });
 
 document.addEventListener("DOMContentLoaded", function() {
     const menuIcon = document.querySelector('.menu-icon');
