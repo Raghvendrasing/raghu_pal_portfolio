@@ -309,6 +309,7 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   animation: fadeIn 2s ease-in-out 0.5s;
   animation-fill-mode: both;
+  border: 1px solid black;
 }
 
 @keyframes fadeIn {
@@ -416,6 +417,13 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
 }
 
 .skill {
@@ -790,6 +798,7 @@ body {
 .color-img{
   width: 100% !important;
   border-radius: 275px !important;
+  border: 1px solid black;
 }
 
 .container {
@@ -1039,7 +1048,8 @@ body {
 
 .image-contact{
   width: 100% !important;
-  border-radius: 250px !important;
+    border-radius: 270px !important;
+    border: 1px solid black;
 }
 /* contact page end */
 
@@ -1050,6 +1060,7 @@ body {
   padding: 15px 0;
   border-top: 2px solid yellow; /* Add border to the top */
   border-bottom: 2px solid #fff; /* Add border to the bottom */
+  margin-top: 40px;
 }
 
 .container {
